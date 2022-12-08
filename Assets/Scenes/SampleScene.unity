@@ -438,10 +438,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 661364560}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2150fe37bc5a5e428cd5f0a7af10f1e, type: 3}
+  m_Script: {fileID: 11500000, guid: 15aff23fa96624e4589e9470540792fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   shoot: 32
   Bullet: {fileID: 849266601496691637, guid: 7a10e75ffc0793c4e8eea924522cdf8e, type: 3}
   direction: {x: 0, y: 0, z: 0}
   mousePos: {x: 0, y: 0}
+  shot: 0
+  canShoot: 0
+  shootDelay: 0
+  weapons:
+  - {fileID: 661364560}
+  - {fileID: 661364560}
+  - {fileID: 661364560}
+  ChangeWeapon: 101
+  reload: 114

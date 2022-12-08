@@ -5,8 +5,8 @@ using UnityEngine;
 public class BulletScript : MonoBehaviour
 {
     PlayerShootScript playerScript;
-   
-    float bulletSpeed = 10;
+    [SerializeField]
+    float bulletSpeed = 20;
     float bulletTimer;
     // Start is called before the first frame update
     void Start()

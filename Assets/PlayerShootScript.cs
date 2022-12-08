@@ -12,21 +12,25 @@ public class PlayerShootScript : MonoBehaviour
     Vector3 worldmouse;
     float shootTimer;
     public Vector2 mousePos;
+    public int shot = 0;
+    public bool canShoot;
+    public float shootDelay;
     // Start is called before the first frame update
-    void Start()
+    public virtual void Start()
     {
-        
+        canShoot = true;
     }
 
     // Update is called once per frame
-    void Update()
+    public virtual void Update()
     {
         mousePos = Input.mousePosition;
         worldmouse = Camera.main.ScreenToWorldPoint(mousePos);
         direction = new Vector3(worldmouse.x - transform.position.x, worldmouse.y - transform.position.y, 0).normalized;
         shootTimer += Time.deltaTime;
-        if (Input.GetKey(shoot) && shootTimer >= 1)
+        if (Input.GetKey(shoot) && shootTimer >= shootDelay && canShoot)
         {
+            shot += 1;
             Instantiate(Bullet, transform.position, Quaternion.identity);
             shootTimer = 0;
         }
